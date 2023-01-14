@@ -5,8 +5,6 @@ module Api
 
     # GET /users/:id
     def show
-      puts user_signed_in?
-      puts current_user
       render_json_response(@user)
     end
 
@@ -36,6 +34,11 @@ module Api
     # GET /users/:id/task_assigned
     def task_assigned
       render_json_response(@user.task_assigned)
+    end
+
+    # GET /all_users
+    def all_users
+      render_json_response(User.all)
     end
 
     private

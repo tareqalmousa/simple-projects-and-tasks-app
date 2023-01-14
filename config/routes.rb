@@ -12,6 +12,7 @@ Rails.application.routes.draw do
       collection do
         post '/create_task', to: 'users#create_task'
         post '/assign_task', to: 'users#assign_task'
+        get '/all_users', to: 'users#all_users'
       end
     end
   end
