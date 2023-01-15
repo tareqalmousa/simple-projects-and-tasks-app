@@ -36,7 +36,7 @@ module Api
       render_json_response(@user.task_assigned)
     end
 
-    # GET /all_users
+    # GET /users/all_users
     def all_users
       render_json_response(User.all)
     end

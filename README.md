@@ -30,7 +30,7 @@ The application can be run by
 Example:
 
 1 -  Registration,
-      POST signup_url, params: {
+      POST '/api/signup', params: {
       user: {
       name: user.name,
       email: user.email,
@@ -47,19 +47,19 @@ Example:
       }
 
 3 -  Create_project,
-      POST /users/:id/create_project, params: {
+      POST '/users/:id/create_project', params: {
       title: "title",
       description: "description"
       }
 
 4 -  Create_task,
-      POST create_task, params: {
+      POST '/users/create_task', params: {
       title: "title",
       projectId: "projectId"
       }
 
 5 -  Assign_task,
-      POST assign_task, params: {
+      POST '/users/assign_task', params: {
       userId: "userId",
       taskId: "taskId"
       }
