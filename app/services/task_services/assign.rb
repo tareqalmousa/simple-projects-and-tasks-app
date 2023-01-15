@@ -32,7 +32,7 @@ module TaskServices
 
     def assign_task_to_user
       @prev_task.update!(user_id: @user_id.to_i)
-      SendPushNotificationToUser.perform_inline(@prev_user.email)
+      SendPushNotificationToUser.perform_async(@prev_user.email)
       result true, nil, @prev_task
     end
 

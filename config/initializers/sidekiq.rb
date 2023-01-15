@@ -1,11 +1,11 @@
 schedule_file = "config/schedule.yml"
 
 Sidekiq.configure_client do |config|
-  config.redis = { url: ENV['REDISCLOUD_URL'], size: 7, network_timeout: 10 }
+  config.redis = { url: ENV['REDIS_URL'], size: 7, network_timeout: 10 }
 end
 
 Sidekiq.configure_server do |config|
-  config.redis = { url: ENV['REDISCLOUD_URL'], size: 7, network_timeout: 10 }
+  config.redis = { url: ENV['REDIS_URL'], size: 7, network_timeout: 10 }
   config.error_handlers << proc do |excexption, ctx_hash|
     error_hash = ctx_hash.deep_dup
     error_hash[:exception] = {
